@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- node
+before_script:
+- npm install
+script:
+- npm run build
+deploy:
+  provider: gcs
+  access_key_id: GOOG32PLYCKZZOP4YIGPOYYX
+  secret_access_key:
+    secure: FwX5/kKM3lo2LS3YKue+CaIkPcS9Gvi7AWFT64VwRwlUcmOjVdxSBzJS8ETuhjndy/e4ckh2NIHLb+QgsA7GGaZBMU3LRr+Ksn0bwIclwbdbvcQ505zMkPxcGPFxm/c1imhfCgAWm6qohxI/toD/CkDn0MXNStDINtEvC6qVOD5wBmtmFis+mEjJCEv7LU/m2eN0sKDA7sfxwUkpxBVA7mmOmr41Q+hfXiOTCRzTaihYImYbV/K0EcxVPMzZaO8b3cUq5deipAagCRG+X4x53sgXYXHlPyfemSxTotOSBl7SIQyvNH3p8syYDQ67jSok0v1xaFoEE4zc7wImeolgHLemjiMu9eE6ZC6EtaVFHDLMrYUVam1ihmgNmb0E7sJqlKJ1YDectUuN/NgvbfcyutvuQXCQflDr5WqixPNpSmVVIlxl75NxXw/h7vFV/5UTZMmrm9kDxMmqlQtgWFSFheIBWnbQWn6w9ZIlwVGbAPQhey+rKN2wb7LOeA1YJlumo146SLkt8/XdtHj9TMvPHS9dZCCyLXRrJBap03V9naspA/zKp7G0exXMA95tZjAdQnHBekGHtcbQqpBZ0smQ73+cHe2M5G2AaLT3YlTxf4veaE9XFZvCAK3LQIsCf5nsZFg+p8mX4hS8jEqLaVzAkiUwjKVl4nYOxwlhCxPqDQI=
+  bucket: www.thomasmaclean.info
+  local-dir: public
+  on:
+    repo: ThomasAndrewMacLean/svelte
