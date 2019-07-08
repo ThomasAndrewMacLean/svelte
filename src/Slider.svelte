@@ -115,13 +115,13 @@
     display: grid;
     grid-template-columns: repeat(var(--grid-size), auto);
     grid-template-rows: repeat(var(--grid-size), auto);
-    width: 80vw;
-    height: 80vw;
+    width: var(--container-size);
+    height: var(--container-size);
     background: lightcyan;
   }
 
   .empty {
-    background: lightgreen;
+    background: ghostwhite;
     cursor: auto !important;
   }
   .block {
@@ -147,9 +147,9 @@
         data-index={index}
         class={block === null ? 'block empty' : 'block'}
         on:click={clickBlock}>
-        {#if block}
+        {#if srcArray[block - 1]}
           <!-- content here -->
-          <img src={srcArray[block - 1]} alt="tiles" />
+          <img src={srcArray[block - 1]} alt={'tile ' + block} />
         {/if}
         <!-- {block} -->
       </div>
