@@ -1,5 +1,6 @@
 <script>
   import Slider from "./Slider.svelte";
+  import Footer from "./Footer.svelte";
   const GRID_SIZE = 3;
 
   // check if screen is portrait or landscape.
@@ -10,3 +11,4 @@
 </script>
 
 <Slider />
+<Footer />
