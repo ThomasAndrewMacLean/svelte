@@ -22,7 +22,7 @@
     <meta name="twitter:creator" content="@7homa5m" />
     <meta property="og:title" content="Tile Slider 🖼" />
     <meta property="og:url" content="https://www.thomasmaclean.info/" />
-    <meta property="og:description" content="Roll the dice and remove the numbers to shut the box">
+    <meta property="og:description" content="Slide the tiles into place.">
     <meta property="og:image" content="https://www.thomasmaclean.info/images/android-chrome-192x192.png">
 
 
@@ -35,6 +35,23 @@
 </head>
 
 <body>
+    <script>
+        window.addEventListener('load', () => {
+            if (!('serviceWorker' in navigator)) {
+                // service workers not supported 😣
+                return
+            }
+
+            navigator.serviceWorker.register('/worker.js').then(
+                () => {
+                    // registered! 👍🏼
+                },
+                err => {
+                    console.error('SW registration failed! 😱', err)
+                }
+            )
+        })
+    </script>
     <script src="bundle.js"></script>
 </body>
 
