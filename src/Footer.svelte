@@ -16,6 +16,6 @@
 
 <footer>
     <span>made with ❤️ by</span>
-    <a href="mailto:hello@thomasmaclean.be?subject=Hi">thomasmaclean</a>
+    <a rel="noopener noreferrer" target="_blank" href="mailto:hello@thomasmaclean.be?subject=Hi">thomasmaclean</a>
     <span>{year}</span>
 </footer>
