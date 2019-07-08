@@ -44,13 +44,17 @@
 
   var tileData = new Array();
   var srcArray = [];
-  const splitImage = () => {
+
+  const splitImage = imageSource => {
+    tileData = new Array();
+    srcArray = [];
+
     var canvas = document.createElement("canvas");
     canvas.height = 400;
     canvas.width = 400;
     var ctx = canvas.getContext("2d");
     var imageObj = new Image();
-    imageObj.src = "./images/kiss.jpeg";
+    imageObj.src = imageSource;
 
     imageObj.onload = function() {
       var hRatio = canvas.width / imageObj.width;
@@ -102,7 +106,12 @@
     };
   };
 
-  splitImage();
+  splitImage("./images/kiss.jpeg");
+
+  const uploadPic = evt => {
+    const newPic = evt.target.files[0];
+    splitImage(URL.createObjectURL(newPic));
+  };
 </script>
 
 <style>
@@ -118,6 +127,7 @@
     width: var(--container-size);
     height: var(--container-size);
     background: lightcyan;
+    user-select: none;
   }
 
   .empty {
@@ -138,6 +148,26 @@
     height: 100vh;
     width: 100%;
   }
+
+  #imgupload {
+    display: none;
+  }
+  label {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    cursor: pointer;
+    background: burlywood;
+    border: 3px solid chocolate;
+    padding: 1rem;
+    font-size: 2rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
 </style>
 
 <main>
@@ -155,7 +185,11 @@
       </div>
     {/each}
   </div>
-  <!-- {#each srcArray as tile}
-    <img src={tile} alt="tiles" />
-  {/each} -->
+  <input
+    type="file"
+    name="image"
+    id="imgupload"
+    accept="image/x-png,image/gif,image/jpeg"
+    on:change={uploadPic} />
+  <label for="imgupload" id="imgupload-btn">📸</label>
 </main>
