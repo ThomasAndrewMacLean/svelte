@@ -1,6 +1,6 @@
 <script>
   import Slider from "./Slider.svelte";
-  const GRID_SIZE = 4;
+  const GRID_SIZE = 3;
 
   //   export let name;
   //   let voornaam = "Ann";

@@ -1,5 +1,6 @@
 export const canSwapTiles = (gridSize, nullIndex, clickIndex) => {
     //Check Up
+    //debugger;
     if (nullIndex === clickIndex - gridSize) {
         return true;
     }

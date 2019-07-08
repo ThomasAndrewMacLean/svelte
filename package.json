@@ -10,6 +10,7 @@
         "riteway": "^6.0.3",
         "rollup": "^1.10.1",
         "rollup-plugin-commonjs": "^9.3.4",
+        "rollup-plugin-copy-assets": "^2.0.1",
         "rollup-plugin-livereload": "^1.0.0",
         "rollup-plugin-node-resolve": "^4.2.3",
         "rollup-plugin-svelte": "^5.0.3",
@@ -25,7 +26,6 @@
         "start": "sirv public",
         "start:dev": "sirv public --dev",
         "test": "NODE_ENV=test riteway src/tests/*.spec.js | tap-color"
-
     },
     "author": "Thomas MacLean <hello@thomasmaclean.be> (https://thomasmaclean.be)",
     "license": "MIT"
