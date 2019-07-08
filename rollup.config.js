@@ -4,6 +4,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import copy from 'rollup-plugin-copy-assets';
+import cleaner from 'rollup-plugin-cleaner';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -16,6 +17,9 @@ export default {
         file: 'public/bundle.js',
     },
     plugins: [
+        cleaner({
+            targets: ['./public/'],
+        }),
         svelte({
             // enable run-time checks when not in production
             dev: !production,
@@ -30,7 +34,7 @@ export default {
                 // You can include directories
                 'src/images',
                 // You can also include files
-                'src/worker.js',
+                //'src/worker.js',
                 'src/index.html',
                 'src/global.css',
                 'src/site.webmanifest',
