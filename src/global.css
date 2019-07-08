@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --grid-size: 3;
+    --container-size: 80vw;
+}
+
+main {
+    background: radial-gradient(#BF7667 30%, lightgoldenrodyellow);
+
+}
