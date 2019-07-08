@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 /**
  * Welcome to your Workbox-powered service worker!
  *
@@ -28,11 +27,11 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "bundle.css",
-    "revision": "2c1c303595695511b060a21822023702"
+    "revision": "4e3abf2237494ecc9b1f03807a73af0c"
   },
   {
     "url": "bundle.js",
-    "revision": "54224cbb4ed3184200518d571fbad0cd"
+    "revision": "ce6bab466e2b033a36ccbf28a3917b60"
   },
   {
     "url": "global.css",
@@ -68,7 +67,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "eec19523ab5c43ee9b0f4f37b01331c1"
+    "revision": "fcdad18f428638c49a1f4dedc1829273"
   },
   {
     "url": "site.webmanifest",
@@ -76,3 +75,5 @@ self.__precacheManifest = [
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+
+workbox.precaching.cleanupOutdatedCaches();

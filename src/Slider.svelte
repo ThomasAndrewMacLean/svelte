@@ -22,7 +22,7 @@
     const indexNull = sliderBlocks.indexOf(null);
 
     const canSwap = canSwapTiles(gridSize, indexNull, indexBlockClicked);
-    console.log(indexBlockClicked);
+   // console.log(indexBlockClicked);
     if (canSwap) {
       sliderBlocks[indexNull] = sliderBlocks[indexBlockClicked];
       sliderBlocks[indexBlockClicked] = null;
