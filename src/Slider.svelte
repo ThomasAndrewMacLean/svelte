@@ -61,17 +61,6 @@
             console.log('vRatio', vRatio);
             canvas.height = imageObj.width * ratio;
             canvas.width = imageObj.width * ratio;
-            ctx.drawImage(
-                imageObj,
-                0,
-                0,
-                shortestImageSide,
-                shortestImageSide,
-                0,
-                0,
-                imageObj.width * ratio,
-                imageObj.width * ratio,
-            );
 
             console.log(orientation);
             switch (orientation) {
@@ -99,6 +88,18 @@
                 default:
                     break;
             }
+
+            ctx.drawImage(
+                imageObj,
+                0,
+                0,
+                shortestImageSide,
+                shortestImageSide,
+                0,
+                0,
+                imageObj.width * ratio,
+                imageObj.width * ratio,
+            );
 
             var tilesX = gridSize;
             var tilesY = gridSize;
