@@ -57,8 +57,8 @@
             var vRatio = canvas.height / imageObj.height;
             var ratio = Math.min(hRatio, vRatio);
             const shortestImageSide = Math.min(imageObj.width, imageObj.height);
-            console.log('hRatio', hRatio);
-            console.log('vRatio', vRatio);
+            // console.log('hRatio', hRatio);
+            // console.log('vRatio', vRatio);
             canvas.height = imageObj.width * ratio;
             canvas.width = imageObj.width * ratio;
 
