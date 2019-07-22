@@ -73,6 +73,7 @@
                 imageObj.width * ratio,
             );
 
+            console.log(orientation);
             switch (orientation) {
                 case 2:
                     ctx.transform(-1, 0, 0, 1, canvas.width, 0);
