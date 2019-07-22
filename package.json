@@ -34,5 +34,6 @@
     "license": "MIT",
     "eslintIgnore": [
         "worker.js"
-    ]
+    ],
+    "dependencies": {}
 }

@@ -1,5 +1,6 @@
 <script>
     import { canSwapTiles } from './utils/canSwapTiles.js';
+    import { getOrientation } from './utils/getOrientation.js';
     export let gridSize;
     let sliderBlocks = [];
 
@@ -40,7 +41,7 @@
     var tileData = new Array();
     var srcArray = [];
 
-    const splitImage = imageSource => {
+    const splitImage = (imageSource, orientation) => {
         tileData = new Array();
         srcArray = [];
 
@@ -55,19 +56,48 @@
             var hRatio = canvas.width / imageObj.width;
             var vRatio = canvas.height / imageObj.height;
             var ratio = Math.min(hRatio, vRatio);
+            const shortestImageSide = Math.min(imageObj.width, imageObj.height);
+            console.log('hRatio', hRatio);
+            console.log('vRatio', vRatio);
             canvas.height = imageObj.width * ratio;
             canvas.width = imageObj.width * ratio;
             ctx.drawImage(
                 imageObj,
                 0,
                 0,
-                imageObj.width,
-                imageObj.width,
+                shortestImageSide,
+                shortestImageSide,
                 0,
                 0,
                 imageObj.width * ratio,
                 imageObj.width * ratio,
             );
+
+            switch (orientation) {
+                case 2:
+                    ctx.transform(-1, 0, 0, 1, canvas.width, 0);
+                    break;
+                case 3:
+                    ctx.transform(-1, 0, 0, -1, canvas.width, canvas.height);
+                    break;
+                case 4:
+                    ctx.transform(1, 0, 0, -1, 0, canvas.height);
+                    break;
+                case 5:
+                    ctx.transform(0, 1, 1, 0, 0, 0);
+                    break;
+                case 6:
+                    ctx.transform(0, 1, -1, 0, canvas.height, 0);
+                    break;
+                case 7:
+                    ctx.transform(0, -1, -1, 0, canvas.height, canvas.width);
+                    break;
+                case 8:
+                    ctx.transform(0, -1, 1, 0, 0, canvas.width);
+                    break;
+                default:
+                    break;
+            }
 
             var tilesX = gridSize;
             var tilesY = gridSize;
@@ -98,7 +128,10 @@
 
     const uploadPic = evt => {
         const newPic = evt.target.files[0];
-        splitImage(URL.createObjectURL(newPic));
+
+        getOrientation(newPic, orientation => {
+            splitImage(URL.createObjectURL(newPic), orientation);
+        });
     };
 </script>
 
