@@ -4,6 +4,7 @@
     export let gridSize;
     let sliderBlocks = [];
 
+    
     for (let i = 1; i < gridSize * gridSize; i++) {
         sliderBlocks.push(i);
     }
