@@ -126,7 +126,7 @@
         };
     };
 
-    splitImage('./images/saga.jpeg');
+    splitImage('./images/kiss.jpeg');
 
     const uploadPic = evt => {
         const newPic = evt.target.files[0];
