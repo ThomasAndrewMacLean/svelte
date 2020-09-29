@@ -38,27 +38,23 @@
     <script>
 
 
-        window.addEventListener('load', () => {
-            if (!('serviceWorker' in navigator)) {
-                // service workers not supported 😣
-                return
-            }
+        // window.addEventListener('load', () => {
+        //     if (!('serviceWorker' in navigator)) {
+        //         // service workers not supported 😣
+        //         return
+        //     }
 
-            navigator.serviceWorker.register('/worker.js').then(
-                () => {
-                    // registered! 👍🏼
-                },
-                err => {
-                    console.error('SW registration failed! 😱', err)
-                }
-            )
-        })
+        //     navigator.serviceWorker.register('/worker.js').then(
+        //         () => {
+        //             // registered! 👍🏼
+        //         },
+        //         err => {
+        //             console.error('SW registration failed! 😱', err)
+        //         }
+        //     )
+        // })
 
-        window.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    skipWaiting();
-  }
-});
+ 
     </script>
     <script src="bundle.js"></script>
     <noscript>Please turn on javascript to play this game.</noscript>
