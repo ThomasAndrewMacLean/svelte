@@ -4,7 +4,6 @@
     export let gridSize;
     let sliderBlocks = [];
 
-    
     for (let i = 1; i < gridSize * gridSize; i++) {
         sliderBlocks.push(i);
     }
@@ -127,7 +126,7 @@
         };
     };
 
-    splitImage('./images/kiss.jpeg');
+    splitImage('./images/saga.jpeg');
 
     const uploadPic = evt => {
         const newPic = evt.target.files[0];
